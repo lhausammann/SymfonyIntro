@@ -33,9 +33,11 @@ Use the console to check the version
 bin/console --version
 ```
 
-## Initialize Symfony project
-
-If your project root is still empty (except Docker/docs files), create a Symfony skeleton in the current directory:
+## Setup Twig & routes
+Create a new controller:
+```zsh
+bin/console make:controller ExampleController
+```
 
 
 
