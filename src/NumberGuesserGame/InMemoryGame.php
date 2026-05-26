@@ -16,11 +16,11 @@ class InMemoryGame implements GuesserInterface
     {
         switch ($guess) {
             case $guess < $this->numberToGuess:
-                return GuessResult::isLower;
+                return GuessResult::Lower;
             case $guess > $this->numberToGuess:
-                return GuessResult::isLarger;
+                return GuessResult::Bigger;
             default:
-                return GuessResult::hasWon;
+                return GuessResult::Equals;
         }
     }
 }

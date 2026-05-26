@@ -3,7 +3,7 @@
 namespace App\NumberGuesserGame;
 
 enum GuessResult {
-    case isLarger;
-    case isLower;
-    case hasWon;
+    case Lower;
+    case Bigger;
+    case Equals;
 }
