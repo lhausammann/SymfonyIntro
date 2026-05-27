@@ -38,4 +38,9 @@ class InMemoryRepository implements RepositoryInterface
         $this->memory[] = $game;
         return $this->memory[count($this->memory) - 1];
     }
+
+    public function save(Game $game): void
+    {
+        // do nothing
+    }
 }

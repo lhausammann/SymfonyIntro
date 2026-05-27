@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-enum GuessResult : string {
+enum GuessResult: string {
     case Lower = '<';
     case Bigger = '>';
     case Equals = '=';
