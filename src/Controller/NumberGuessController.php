@@ -32,6 +32,7 @@ final class NumberGuessController extends AbstractController
             $result = null;
             if ($request->isMethod('POST') && $guess = $request->request->get('number')) {
                 $result = $game->guess((int) $guess);
+                $repo->save($game);
             }
 
             return $this->render('guess.html.twig', [

@@ -1,14 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {{ game.over }}
     <h1>Willkommen zu Spiel #{{ game.id }}</h1>
     <h2>Wähle eine Nummer:</h2>
-    <form name="guess" method="post">
-        <input type="number" name="number" min="1" max="100" required>
-        <button type="submit">Raten</button>
-    </form>
-    {% if result %}
-        <h3>{{ guess }} {{ result }} ausgedachte Zahl</h3>
+    {% if game.over == true %}
+        <h3>Das Spiel ist vorbei. Die gesuchte Zahl war {{ guess }}</h3>
+        <h3><a href="/">Neues Spiel</a></h3>
+    {% else %}
+        <form name="guess" method="post">
+            <input type="number" name="number" min="1" max="100" required>
+            <button type="submit">Raten</button>
+        </form>
+        {% if result %}
+            {% for historyEntry in game.history %}
+                {% if not loop.last %}
+                    <p>{{ historyEntry }}</p>
+                {% endif %}
+            {% endfor %}
+            <h3>{{ guess }} {{ result }} ausgedachte Zahl</h3>
+        {% endif %}
 
     {% endif %}
+
 {% endblock %}

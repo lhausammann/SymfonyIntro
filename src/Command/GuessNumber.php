@@ -21,7 +21,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 final class GuessNumber extends Command
 {
     private GuesserInterface $game;
-    public function __construct(private readonly InMemoryRepository $repository)
+    public function __construct(readonly InMemoryRepository $repository)
     {
         $this->game = $repository->create();
         parent::__construct();

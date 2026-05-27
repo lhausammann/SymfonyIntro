@@ -8,4 +8,6 @@ interface RepositoryInterface
 {
     public function load(int $id): Game;
     public function create(): Game;
+
+    public function save(Game $game): void;
 }

@@ -30,5 +30,13 @@ class GameRepository extends ServiceEntityRepository implements RepositoryInterf
         $this->getEntityManager()->flush();
         return $game;
     }
+
+    public function save(Game $game): void {
+        foreach ($game->getHistory() as $entry) {
+            $this->getEntityManager()->persist($entry);
+        }
+        $this->getEntityManager()->persist($game);
+        $this->getEntityManager()->flush();
+    }
 }
 
