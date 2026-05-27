@@ -52,6 +52,7 @@
     "symfony/polyfill-php84": "*"
   },
   "scripts": {
+    "test": "vendor/bin/simple-phpunit",
     "auto-scripts": {
       "cache:clear": "symfony-cmd",
       "assets:install %PUBLIC_DIR%": "symfony-cmd"
@@ -73,6 +74,7 @@
     }
   },
   "require-dev": {
-    "symfony/maker-bundle": "^1.67"
+    "symfony/maker-bundle": "^1.67",
+    "symfony/phpunit-bridge": "^8.0"
   }
 }
