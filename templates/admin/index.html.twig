@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Willkommen</h1>
+    <h2>Admin Dashboard</h2>
+    <ul>
+        {% for game in games %}
+            <li>Spiel #{{ game.id }} {{ game.over == true ? 'beendet': 'offen' }} Runde: {{ game.history.count() }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
