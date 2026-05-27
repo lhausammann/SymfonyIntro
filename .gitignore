@@ -61,5 +61,6 @@
 /public/bundles/
 /var/
 /vendor/
+
 ###< symfony/framework-bundle ###
 public/bundles/
