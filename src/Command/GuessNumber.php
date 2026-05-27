@@ -6,6 +6,7 @@ namespace App\Command;
 
 use App\NumberGuesserGame\GuessResult;
 use App\NumberGuesserGame\GuesserInterface;
+use App\NumberGuesserGame\InMemoryRepository;
 use RuntimeException;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -19,14 +20,16 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 final class GuessNumber extends Command
 {
-    public function __construct(private readonly GuesserInterface $game)
+    private GuesserInterface $game;
+    public function __construct(private readonly InMemoryRepository $repository)
     {
+        $this->game = $repository->create();
         parent::__construct();
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->game->init();
+
         $io = new SymfonyStyle($input, $output);
 
         $io->title('Guess the number 🎯');

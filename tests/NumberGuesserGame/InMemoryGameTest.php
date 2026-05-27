@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace App\Tests\NumberGuesserGame;
 
 use App\NumberGuesserGame\GuessResult;
-use App\NumberGuesserGame\InMemoryGame;
+use App\NumberGuesserGame\Game;
 use PHPUnit\Framework\TestCase;
 
 final class InMemoryGameTest extends TestCase
 {
     public function testReturnsLowerWhenGuessIsTooSmall(): void
     {
-        $game = new InMemoryGame();
-        $game->init();
+        $game = new Game(1, 7);
+
 
         $result = $game->guess(6);
 
@@ -22,8 +22,7 @@ final class InMemoryGameTest extends TestCase
 
     public function testReturnsBiggerWhenGuessIsTooLarge(): void
     {
-        $game = new InMemoryGame();
-        $game->init();
+        $game = new Game(1, 7);
 
         $result = $game->guess(8);
 
@@ -32,8 +31,8 @@ final class InMemoryGameTest extends TestCase
 
     public function testReturnsEqualsWhenGuessMatchesNumber(): void
     {
-        $game = new InMemoryGame();
-        $game->init();
+        $game = new Game(1, 7);
+
 
         $result = $game->guess(7);
 

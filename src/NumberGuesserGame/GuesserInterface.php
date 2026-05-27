@@ -5,6 +5,6 @@ namespace App\NumberGuesserGame;
 
 interface GuesserInterface
 {
-    public function init(): void;
+    public function getId(): int;
     public function guess(int $guess): GuessResult;
 }

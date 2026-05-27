@@ -2,22 +2,22 @@
 
 namespace App\NumberGuesserGame;
 
-class InMemoryGame implements GuesserInterface
+class Game implements GuesserInterface
 {
-    private int $numberToGuess;
 
+    public function __construct(private int $gameId, private int $secretNumber)
+    {}
 
-    public function init(): void
-    {
-        $this->numberToGuess = 7;
+    public function getId(): int {
+        return $this->gameId;
     }
 
     public function guess(int $guess): GuessResult
     {
         switch ($guess) {
-            case $guess < $this->numberToGuess:
+            case $guess < $this->secretNumber:
                 return GuessResult::Lower;
-            case $guess > $this->numberToGuess:
+            case $guess > $this->secretNumber:
                 return GuessResult::Bigger;
             default:
                 return GuessResult::Equals;
