@@ -1,6 +1,6 @@
 <?php
 
-namespace App\NumberGuesserGame;
+namespace App\Entity;
 
 enum GuessResult {
     case Lower;

@@ -3,6 +3,8 @@
 namespace App\NumberGuesserGame;
 
 
+use App\Entity\GuessResult;
+
 interface GuesserInterface
 {
     public function getId(): int;

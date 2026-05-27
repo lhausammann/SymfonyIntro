@@ -1,8 +1,10 @@
 <?php
 
-namespace App\NumberGuesserGame;
+namespace App\Repository;
 
 
+use App\Entity\Game;
+use App\NumberGuesserGame\RepositoryInterface;
 use http\Exception\InvalidArgumentException;
 
 /** In Memory allows to store and laod a game from memory */
@@ -32,9 +34,8 @@ class InMemoryRepository implements RepositoryInterface
 
     public function create(): Game
     {
-        $game = new Game(count($this->memory), rand($this->lowerBound, $this->upperBound));
+        $game = new Game(rand($this->lowerBound, $this->upperBound), count($this->memory));
         $this->memory[] = $game;
         return $this->memory[count($this->memory) - 1];
-
     }
 }
