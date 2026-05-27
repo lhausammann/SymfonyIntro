@@ -16,8 +16,9 @@ class Game implements GuesserInterface
         #[ORM\Column(type: 'integer')]
         #[ORM\Id]
         #[ORM\GeneratedValue]
-        private readonly ?int $id = null,
-    ) {}
+        private ?int $id = null,
+    ) {
+    }
 
     public function getId(): int {
         return $this->id ?? 0;
