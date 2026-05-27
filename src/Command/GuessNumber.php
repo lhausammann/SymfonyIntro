@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\NumberGuesserGame\GuessResult;
+use App\Entity\GuessResult;
 use App\NumberGuesserGame\GuesserInterface;
-use App\NumberGuesserGame\InMemoryRepository;
+use App\Repository\InMemoryRepository;
 use RuntimeException;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;

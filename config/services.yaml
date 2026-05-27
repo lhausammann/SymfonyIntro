@@ -20,7 +20,11 @@ services:
         resource: '../src/'
 
 
-    App\NumberGuesserGame\InMemoryRepository:
+    App\Repository\InMemoryRepository:
+        $lowerBound: 1
+        $upperBound: 100
+
+    App\Repository\GameRepository:
         $lowerBound: 1
         $upperBound: 100
 

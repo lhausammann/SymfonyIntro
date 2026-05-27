@@ -1,15 +1,27 @@
 <?php
 
-namespace App\NumberGuesserGame;
+namespace App\Entity;
 
+use App\NumberGuesserGame\GuesserInterface;
+use Doctrine\ORM\Mapping as ORM;
+
+#[ORM\Entity]
 class Game implements GuesserInterface
 {
 
-    public function __construct(private int $gameId, private int $secretNumber)
-    {}
+    public function __construct(
+
+        #[ORM\Column(type: 'integer')]
+        private int $secretNumber,
+        #[ORM\Column(type: 'integer')]
+        #[ORM\Id]
+        #[ORM\GeneratedValue]
+        private ?int $id = null,
+    ) {
+    }
 
     public function getId(): int {
-        return $this->gameId;
+        return $this->id ?? 0;
     }
 
     public function guess(int $guess): GuessResult

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tests\NumberGuesserGame;
 
-use App\NumberGuesserGame\GuessResult;
-use App\NumberGuesserGame\Game;
+use App\Entity\Game;
+use App\Entity\GuessResult;
 use PHPUnit\Framework\TestCase;
 
 final class InMemoryGameTest extends TestCase

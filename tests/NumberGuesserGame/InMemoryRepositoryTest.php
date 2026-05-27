@@ -2,8 +2,8 @@
 
 namespace App\Tests\NumberGuesserGame;
 
-use App\NumberGuesserGame\InMemoryRepository;
-use App\NumberGuesserGame\GuessResult;
+use App\Entity\GuessResult;
+use App\Repository\InMemoryRepository;
 
 class InMemoryRepositoryTest
 {
