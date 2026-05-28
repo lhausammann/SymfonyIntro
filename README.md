@@ -1,7 +1,7 @@
 # SymfonyIntro
 
 Dieses Repository ist als Schulungsprojekt aufgebaut. Die Branches sind als Kapitel gedacht und zeigen die Entwicklung einer Symfony-Anwendung Schritt fuer Schritt.
-
+Präsentation: https://srgssr-my.sharepoint.com/:p:/g/personal/luzius_hausammann_srf_ch/IQDrBDeO-gRPT5EFHinHTQ2cATJIvcI7gaCZXiuENcb3sbY?e=dAbZyf
 ## Lernpfad (Hauptkapitel)
 
 ### 1. `1-docker` - Projektstart mit Docker
